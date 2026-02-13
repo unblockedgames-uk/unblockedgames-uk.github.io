@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSlot | Unblocked Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --electric-cyan: #00f2ff;
+            --cyber-yellow: #fcee0a;
+            --dark-bg: #050505;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scanline Overlay */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* Grainy Texture */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.05;
+            z-index: 9998;
+            pointer-events: none;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--electric-cyan),
+                         0.025em 0.05em 0 #00ff00;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 0 var(--neon-pink), -2px 0 0 var(--electric-cyan); }
+            25% { text-shadow: -2px 0 0 var(--neon-pink), 2px 0 0 var(--electric-cyan); }
+            50% { text-shadow: 2px -2px 0 var(--neon-pink), -2px 2px 0 var(--electric-cyan); }
+            100% { text-shadow: 2px 0 0 var(--neon-pink), -2px 0 0 var(--electric-cyan); }
+        }
+
+        .neon-border-pink { border: 1px solid var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
+        .neon-border-cyan { border: 1px solid var(--electric-cyan); box-shadow: 0 0 10px var(--electric-cyan); }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--electric-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-blur {
+            filter: blur(4px) grayscale(100%);
+        }
+
+        .pulse {
+            animation: pulse-yellow 1.5s infinite;
+        }
+
+        @keyframes pulse-yellow {
+            0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--cyber-yellow); }
+            50% { opacity: 0.5; text-shadow: 0 0 2px var(--cyber-yellow); }
+        }
+
+        .progress-bar-fill {
+            width: 90%;
+            background: repeating-linear-gradient(45deg, var(--cyber-yellow), var(--cyber-yellow) 10px, #000 10px, #000 20px);
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background-color: #39ff14;
+            box-shadow: 0 0 8px #39ff14;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <header class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b-2 border-[#00f2ff] pb-4 mb-12">
+        <div class="text-3xl font-bold tracking-tighter italic">
+            <span class="text-[#ff00ff]">CYBER</span><span class="text-white">SLOT</span>
+        </div>
+        
+        <nav class="flex gap-8 my-4 md:my-0 text-sm font-mono">
+            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Games</a>
+            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Leaderboard</a>
+            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Terminal</a>
+        </nav>
+
+        <div class="flex items-center font-mono text-xs uppercase tracking-widest text-gray-400">
+            <span class="status-dot"></span>
+            System Status: <span class="text-white ml-2">Online</span>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto mb-16 text-center">
+        <h1 class="glitch text-5xl md:text-8xl font-black uppercase mb-4 tracking-tighter">
+            CyberSlot Unblocked
+        </h1>
+        <p class="font-mono text-[#00f2ff] tracking-widest text-sm">ACCESS GRANTED // BYPASSING FIREWALL... 100%</p>
+    </section>
+
+    <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer">
+            <div class="relative h-48 bg-gray-900 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20">🎮</div>
+                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">Action</div>
+            </div>
+            <div class="p-4 bg-[#0a0a0a]">
+                <h3 class="text-lg font-bold mb-1">NEON RUNNER</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Latency: 12ms</p>
+            </div>
+        </div>
+
+        <div class="game-card bg-black border border-[#ff00ff] p-1 cursor-pointer">
+            <div class="relative h-48 bg-gray-900 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20">🕹️</div>
+                <div class="absolute bottom-0 left-0 bg-[#ff00ff] text-white px-2 py-1 text-xs font-bold uppercase">Retro</div>
+            </div>
+            <div class="p-4 bg-[#0a0a0a]">
+                <h3 class="text-lg font-bold mb-1">BIT-CRUSHER</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Latency: 5ms</p>
+            </div>
+        </div>
+
+        <div class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer">
+            <div class="relative h-48 bg-gray-900 overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20">⚔️</div>
+                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">Combat</div>
+            </div>
+            <div class="p-4 bg-[#0a0a0a]">
+                <h3 class="text-lg font-bold mb-1">CYBER-DUEL</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Latency: 22ms</p>
+            </div>
+        </div>
+
+        <div class="relative border border-dashed border-gray-600 p-1 group">
+            <div class="coming-soon-blur relative h-48 bg-gray-800"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 text-center">
+                <span class="pulse text-[#fcee0a] font-bold text-sm tracking-tighter mb-4">LOADING.. COMING SOON</span>
+                <div class="w-full bg-gray-900 h-4 border border-gray-700">
+                    <div class="progress-bar-fill h-full"></div>
+                </div>
+                <span class="font-mono text-[10px] mt-1 text-[#fcee0a]">INITIALIZING SECTOR 9: 90%</span>
+            </div>
+            <div class="p-4 bg-transparent">
+                <h3 class="text-lg font-bold text-gray-600 italic">PROJECT [REDACTED]</h3>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-8 pb-12 text-center font-mono text-[10px] text-gray-500 uppercase tracking-[0.3em]">
+        &copy; 2024 CyberSlot_Global_Network // No Rights Reserved. Stay Wired.
+    </footer>
+
+</body>
+</html>
