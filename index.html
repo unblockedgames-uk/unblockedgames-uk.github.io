@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Scanline Overlay */
+        /* Scanline & Noise Overlays */
         body::before {
             content: " ";
             display: block;
@@ -33,29 +33,23 @@
             pointer-events: none;
         }
 
-        /* Grainy Texture */
         body::after {
             content: "";
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0.05;
-            z-index: 9998;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.05; z-index: 9998;
             pointer-events: none;
             background-image: url('https://grainy-gradients.vercel.app/noise.svg');
         }
 
-        /* Glitch Effect */
         .glitch {
             position: relative;
-            text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--electric-cyan),
-                         0.025em 0.05em 0 #00ff00;
+            text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--electric-cyan), 0.025em 0.05em 0 #00ff00;
             animation: glitch 1s infinite;
         }
 
         @keyframes glitch {
             0% { text-shadow: 2px 0 0 var(--neon-pink), -2px 0 0 var(--electric-cyan); }
-            25% { text-shadow: -2px 0 0 var(--neon-pink), 2px 0 0 var(--electric-cyan); }
             50% { text-shadow: 2px -2px 0 var(--neon-pink), -2px 2px 0 var(--electric-cyan); }
             100% { text-shadow: 2px 0 0 var(--neon-pink), -2px 0 0 var(--electric-cyan); }
         }
@@ -70,10 +64,7 @@
             box-shadow: 0 0 20px rgba(252, 238, 10, 0.4);
         }
 
-        .coming-soon-blur { filter: blur(4px) grayscale(100%); }
-
         .pulse { animation: pulse-yellow 1.5s infinite; }
-
         @keyframes pulse-yellow {
             0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--cyber-yellow); }
             50% { opacity: 0.5; text-shadow: 0 0 2px var(--cyber-yellow); }
@@ -101,93 +92,86 @@
             <span class="text-[#ff00ff]">CYBER</span><span class="text-white">SLOT</span>
         </div>
         
-        <nav class="flex gap-8 my-4 md:my-0 text-sm font-mono">
-            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Games</a>
-            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Leaderboard</a>
-            <a href="#" class="hover:text-[#ff00ff] transition-colors uppercase tracking-widest">Terminal</a>
+        <nav class="flex gap-8 my-4 md:my-0 text-sm font-mono uppercase tracking-widest">
+            <a href="#" class="hover:text-[#ff00ff] transition-colors">Games</a>
+            <a href="#" class="hover:text-[#ff00ff] transition-colors">Leaderboard</a>
+            <a href="#" class="hover:text-[#ff00ff] transition-colors">Terminal</a>
         </nav>
 
-        <div class="flex items-center font-mono text-xs uppercase tracking-widest text-gray-400">
+        <div class="flex items-center font-mono text-xs uppercase text-gray-400">
             <span class="status-dot"></span>
             System Status: <span class="text-white ml-2">Online</span>
         </div>
     </header>
 
     <section class="max-w-7xl mx-auto mb-16 text-center">
-        <h1 class="glitch text-5xl md:text-8xl font-black uppercase mb-4 tracking-tighter">
-            CyberSlot Unblocked
-        </h1>
+        <h1 class="glitch text-5xl md:text-8xl font-black uppercase mb-4 tracking-tighter">CyberSlot Unblocked</h1>
         <p class="font-mono text-[#00f2ff] tracking-widest text-sm">ACCESS GRANTED // BYPASSING FIREWALL... 100%</p>
     </section>
 
     <main class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        <div onclick="launchGame('https://codeartemis.github.io/TriggerRally/server/public/')" 
-             class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer group">
+        <div onclick="launchGame('https://codeartemis.github.io/TriggerRally/server/public/')" class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer group">
             <div class="relative h-48 bg-gray-900 overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-30 group-hover:scale-110 transition-transform">🏎️</div>
                 <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">3D Racing</div>
             </div>
             <div class="p-4 bg-[#0a0a0a]">
-                <h3 class="text-lg font-bold mb-1 group-hover:text-[#00f2ff] transition-colors">TRIGGER RALLY</h3>
+                <h3 class="text-lg font-bold mb-1 group-hover:text-[#00f2ff]">TRIGGER RALLY</h3>
                 <p class="font-mono text-xs text-gray-400 uppercase">Latency: 12ms // 60FPS</p>
             </div>
         </div>
 
-        <div class="game-card bg-black border border-[#ff00ff] p-1 cursor-pointer">
+        <div onclick="launchGame('https://particle-clicker.github.io/particle-clicker/')" class="game-card bg-black border border-[#ff00ff] p-1 cursor-pointer group">
             <div class="relative h-48 bg-gray-900 overflow-hidden">
-                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20">🕹️</div>
-                <div class="absolute bottom-0 left-0 bg-[#ff00ff] text-white px-2 py-1 text-xs font-bold uppercase">Retro</div>
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-30 group-hover:scale-110 transition-transform">⚛️</div>
+                <div class="absolute bottom-0 left-0 bg-[#ff00ff] text-white px-2 py-1 text-xs font-bold uppercase">Idle Sim</div>
             </div>
             <div class="p-4 bg-[#0a0a0a]">
-                <h3 class="text-lg font-bold mb-1">BIT-CRUSHER</h3>
-                <p class="font-mono text-xs text-gray-400 uppercase">Latency: 5ms</p>
+                <h3 class="text-lg font-bold mb-1 group-hover:text-[#ff00ff]">PARTICLE CLICKER</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Research Status: 100%</p>
             </div>
         </div>
 
-        <div class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer">
+        <div onclick="launchGame('https://precisioncoding.github.io/Minecraft-PC/')" class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer group">
             <div class="relative h-48 bg-gray-900 overflow-hidden">
-                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-20">⚔️</div>
-                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">Combat</div>
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-30 group-hover:scale-110 transition-transform">🧱</div>
+                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">Voxel Craft</div>
             </div>
             <div class="p-4 bg-[#0a0a0a]">
-                <h3 class="text-lg font-bold mb-1">CYBER-DUEL</h3>
-                <p class="font-mono text-xs text-gray-400 uppercase">Latency: 22ms</p>
+                <h3 class="text-lg font-bold mb-1 group-hover:text-[#00f2ff]">VOXEL WORLD</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Environment: Stable</p>
             </div>
         </div>
 
-        <div class="relative border border-dashed border-gray-600 p-1 group">
-            <div class="coming-soon-blur relative h-48 bg-gray-800"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 text-center">
-                <span class="pulse text-[#fcee0a] font-bold text-sm tracking-tighter mb-4">LOADING.. COMING SOON</span>
-                <div class="w-full bg-gray-900 h-4 border border-gray-700">
+        <div class="relative border border-dashed border-gray-600 p-1">
+            <div class="relative h-48 bg-gray-800 opacity-20 grayscale"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                <span class="pulse text-[#fcee0a] font-bold text-sm mb-4">LOADING SECTOR 9</span>
+                <div class="w-full bg-gray-900 h-2 border border-gray-700">
                     <div class="progress-bar-fill h-full"></div>
                 </div>
-                <span class="font-mono text-[10px] mt-1 text-[#fcee0a]">INITIALIZING SECTOR 9: 90%</span>
             </div>
-            <div class="p-4 bg-transparent">
-                <h3 class="text-lg font-bold text-gray-600 italic">PROJECT [REDACTED]</h3>
+            <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-600 italic">UNKNOWN_OBJECT</h3>
             </div>
         </div>
 
     </main>
 
     <footer class="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-8 pb-12 text-center font-mono text-[10px] text-gray-500 uppercase tracking-[0.3em]">
-        &copy; 2026 CyberSlot_Global_Network // No Rights Reserved. Stay Wired.
+        &copy; 2026 CyberSlot_Global_Network // Stay Wired.
     </footer>
 
     <div id="game-modal" class="hidden fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="relative w-full max-w-6xl aspect-video border-2 border-[#00f2ff] bg-black shadow-[0_0_50px_rgba(0,242,255,0.2)]">
-            
             <div class="absolute -top-10 left-0 right-0 flex justify-between items-center font-mono text-[10px] text-[#00f2ff]">
-                <span class="animate-pulse">ENCRYPTED_STREAMING_ACTIVE...</span>
-                <button onclick="closeGame()" class="hover:text-white transition-colors uppercase">[ X ] DISCONNECT_SESSION</button>
+                <span class="animate-pulse uppercase">Neural_Link_Active... streaming_data</span>
+                <button onclick="closeGame()" class="hover:text-white uppercase">[ X ] Terminate Session</button>
             </div>
-
             <iframe id="game-screen" src="" class="w-full h-full border-none" allow="autoplay; keyboard"></iframe>
-            
-            <div id="loading-text" class="absolute inset-0 flex items-center justify-center bg-black z-[-1] font-mono text-xs tracking-widest">
-                INITIALIZING_NEURAL_LINK...
+            <div id="loading-text" class="absolute inset-0 flex items-center justify-center bg-black z-[-1] font-mono text-xs">
+                BOOTING_SYSTEM...
             </div>
         </div>
     </div>
@@ -196,32 +180,22 @@
         function launchGame(url) {
             const modal = document.getElementById('game-modal');
             const iframe = document.getElementById('game-screen');
-            
-            // Set source and show modal
             iframe.src = url;
             modal.classList.remove('hidden');
-            
-            // Lock body scroll
             document.body.style.overflow = 'hidden';
         }
 
         function closeGame() {
             const modal = document.getElementById('game-modal');
             const iframe = document.getElementById('game-screen');
-            
-            // Clear source to stop game sound/processing
             iframe.src = '';
             modal.classList.add('hidden');
-            
-            // Restore scroll
             document.body.style.overflow = 'auto';
         }
 
-        // Close on Escape key
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeGame();
         });
     </script>
-
 </body>
 </html>
