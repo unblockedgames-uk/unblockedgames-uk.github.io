@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Scanline & Noise Overlays */
+        /* Scanline Overlay */
         body::before {
             content: " ";
             display: block;
@@ -33,18 +33,23 @@
             pointer-events: none;
         }
 
+        /* Grainy Texture */
         body::after {
             content: "";
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.05; z-index: 9998;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0.05;
+            z-index: 9998;
             pointer-events: none;
             background-image: url('https://grainy-gradients.vercel.app/noise.svg');
         }
 
+        /* Glitch Effect */
         .glitch {
             position: relative;
-            text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--electric-cyan), 0.025em 0.05em 0 #00ff00;
+            text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--electric-cyan),
+                         0.025em 0.05em 0 #00ff00;
             animation: glitch 1s infinite;
         }
 
@@ -133,21 +138,21 @@
             </div>
         </div>
 
-        <div onclick="launchGame('https://precisioncoding.github.io/Minecraft-PC/')" class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer group">
+        <div onclick="launchGame('https://dos.zone/doom-dec-1993/')" class="game-card bg-black border border-[#00f2ff] p-1 cursor-pointer group">
             <div class="relative h-48 bg-gray-900 overflow-hidden">
-                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-30 group-hover:scale-110 transition-transform">🧱</div>
-                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">Voxel Craft</div>
+                <div class="absolute inset-0 flex items-center justify-center text-4xl opacity-30 group-hover:scale-110 transition-transform">💀</div>
+                <div class="absolute bottom-0 left-0 bg-[#00f2ff] text-black px-2 py-1 text-xs font-bold uppercase">FPS / Classic</div>
             </div>
             <div class="p-4 bg-[#0a0a0a]">
-                <h3 class="text-lg font-bold mb-1 group-hover:text-[#00f2ff]">VOXEL WORLD</h3>
-                <p class="font-mono text-xs text-gray-400 uppercase">Environment: Stable</p>
+                <h3 class="text-lg font-bold mb-1 group-hover:text-[#00f2ff]">DOOM_OS</h3>
+                <p class="font-mono text-xs text-gray-400 uppercase">Legacy Code // WASM</p>
             </div>
         </div>
 
         <div class="relative border border-dashed border-gray-600 p-1">
             <div class="relative h-48 bg-gray-800 opacity-20 grayscale"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                <span class="pulse text-[#fcee0a] font-bold text-sm mb-4">LOADING SECTOR 9</span>
+                <span class="pulse text-[#fcee0a] font-bold text-sm mb-4 uppercase">Loading Sector 9</span>
                 <div class="w-full bg-gray-900 h-2 border border-gray-700">
                     <div class="progress-bar-fill h-full"></div>
                 </div>
@@ -160,7 +165,7 @@
     </main>
 
     <footer class="max-w-7xl mx-auto mt-24 border-t border-gray-800 pt-8 pb-12 text-center font-mono text-[10px] text-gray-500 uppercase tracking-[0.3em]">
-        &copy; 2026 CyberSlot_Global_Network // Stay Wired.
+        &copy; 2026 CyberSlot_Global_Network // No Rights Reserved. Stay Wired.
     </footer>
 
     <div id="game-modal" class="hidden fixed inset-0 z-[10000] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm">
@@ -169,10 +174,7 @@
                 <span class="animate-pulse uppercase">Neural_Link_Active... streaming_data</span>
                 <button onclick="closeGame()" class="hover:text-white uppercase">[ X ] Terminate Session</button>
             </div>
-            <iframe id="game-screen" src="" class="w-full h-full border-none" allow="autoplay; keyboard"></iframe>
-            <div id="loading-text" class="absolute inset-0 flex items-center justify-center bg-black z-[-1] font-mono text-xs">
-                BOOTING_SYSTEM...
-            </div>
+            <iframe id="game-screen" src="" class="w-full h-full border-none" allow="autoplay; keyboard; fullscreen"></iframe>
         </div>
     </div>
 
